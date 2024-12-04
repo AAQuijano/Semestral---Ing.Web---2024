@@ -108,6 +108,7 @@ class Metodos_users{
                 echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
                 echo "Detalles adicionales:"."<br>";
                 print_r($e->errorInfo);
+                return false;
             }
         }else{
             return false;

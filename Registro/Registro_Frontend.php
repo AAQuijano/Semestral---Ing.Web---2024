@@ -27,7 +27,7 @@ if(isset($_SESSION['user'])){
         <!--Telefono: <input type="text" name="TelP"><br>-->
         <input type="submit" name="boton0" value="Enviar"><br><br>
         <a href="../Login/Login_Frontend.php">Iniciar Sesion</a><br>
-        <a href="../Index.php">Index</a><br>
+        <!--<a href="../Index.php">Index</a><br>-->
 
     </form>
     

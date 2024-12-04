@@ -1,11 +1,10 @@
 <?php
 require '../Session/Session_user.php';
-$user_sesion = New User_session();
-if(isset($_SESSION['user'])){
+$userSession = new User_session();
+if(isset($_SESSION['user']) && !empty($_SESSION['user'])){
     echo"<script> alert('Ya existe una sesion');document.location.href = '../Vistas/Home.php';</script>";
-    //header('Location: ../Login/Login_Frontend.php');   
-}
 
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,16 +19,11 @@ if(isset($_SESSION['user'])){
     <h3>INICIO DE SESION</h3>
     <form method="post" action="Login_Backend.php">
 
-        <?php 
-        if(isset($errorLogin)){
-            echo $errorLogin.'<br>';
-        }
-        ?>
         Nombre de usuario: <input type="text" name="NameL" required><br>
         Contraseña: <input type="password" name="passL" required><br>
         <input type="submit" name="boton0" value="Enviar"><br><br>  
         <a href="../Registro/Registro_Frontend.php">Registrarse</a><br>
-        <a href="../Index.php">Index</a><br>
+        <!--<a href="../Index.php">Index</a><br>-->
         
     </form>
     
