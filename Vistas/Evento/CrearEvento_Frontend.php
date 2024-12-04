@@ -35,5 +35,6 @@ if(!isset($_SESSION['user'])){
         <input type="submit" name="bton0">
         
     </form>
+    <a href="../Home.php">Regresar</a><br>
 </body>
 </html>

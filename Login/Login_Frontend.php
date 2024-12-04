@@ -24,8 +24,8 @@ if(isset($_SESSION['user'])){
             echo $errorLogin.'<br>';
         }
         ?>
-        Nombre de usuario: <input type="text" name="NameL"><br>
-        Contraseña: <input type="password" name="passL"><br>
+        Nombre de usuario: <input type="text" name="NameL" required><br>
+        Contraseña: <input type="password" name="passL" required><br>
         <input type="submit" name="boton0" value="Enviar"><br><br>  
         <a href="../Registro/Registro_Frontend.php">Registrarse</a><br>
         <a href="../Index.php">Index</a><br>

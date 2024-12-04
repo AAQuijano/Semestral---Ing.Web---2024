@@ -55,7 +55,8 @@ if(isset($_POST['boton0']) && !empty($_POST['boton0'])){
         Cedula: <input type="text" name="Ced"><br>
         Correo: <input type="email"  name="Correo"><br><br>
         <input type="submit" name="boton0" value="Enviar"><br><br>
-        <a href="../Home.php" target="_blank">Home</a>
+        <a href="Mi_Cuenta.php">Regresar</a><br>
+        <a href="../Home.php">Home</a>
 
     </form>
     

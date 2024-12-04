@@ -28,16 +28,31 @@ $event = new Eventos_db($db);
     <h4>Tickets comprados info</h4>
 
     <?php
-        $factura = $event->ver_factura($user['id_user']);
-        $filas = count($factura);
-        for($x=0;$x<$filas;$x++){
-            $fiesta = $event->ver_evento($factura[$x]['id_event']);
-            $boleto = $event->ver_ticket($factura[$x]['id_ticket']);
-            echo 'Evento: '.$fiesta['tittle_event'].'<br>';
-            echo 'Tipo de boleto: '.$boleto['tipo_ticket'].'<br>';
-            echo 'Cantidad de boletos adquiridos: '.$factura[$x]['qty_ticket'].'<br>';
-            echo 'Total pagado: $'.$factura[$x]['Total_pago'].'<br><br>';
+        if($event->ver_factura($user['id_user'])){
+            $factura = $event->ver_factura($user['id_user']);
+            $filas = count($factura);
+            for($x=0;$x<$filas;$x++){
+                $fiesta = $event->ver_evento($factura[$x]['id_event']);
+                $boleto = $event->ver_ticket($factura[$x]['id_ticket']);
+                echo 'Evento: '.$fiesta['tittle_event'].'<br>';
+                echo 'Tipo de boleto: '.$boleto['tipo_ticket'].'<br>';
+                echo 'Cantidad de boletos adquiridos: '.$factura[$x]['qty_ticket'].'<br>';
+                echo 'Total pagado: $'.$factura[$x]['Total_pago'].'<br><br>';
+            }
+
+        }else{
+            echo '<h4>No tienes ninguna ticket comprado</h4>';
+            //print_r($event->ver_factura($user['id_user']));
+            echo '<br>';
+           /*$fiesta = $event->ver_evento($factura[0]['id_event']);
+            print_r($fiesta);
+            echo '<br>';
+            $boleto = $event->ver_ticket($factura[0]['id_ticket']);
+            print_r($boleto);
+             echo '<br>';*/
+            //echo"<script> alert('Error de info');document.location.href = 'Mi_Cuenta.php';</script>";     
         }
+        
         /*print_r($factura);
         echo '<br>';
         $fiesta = $event->ver_evento($factura[0]['id_event']);
@@ -49,7 +64,9 @@ $event = new Eventos_db($db);
     ?>
 
 
-<br><br><a href="../Home.php">Home</a>
+<br><br><a href="Mi_cuenta.php">Regresar</a><br>
+<a href="../Home.php">Home</a>
+
     
 </body>
 </html>

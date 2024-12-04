@@ -17,11 +17,11 @@ if(isset($_SESSION['user'])){
 <body>
     <h3>REGISTRO DE USUARIO</h3><br>
     <form method="post" action="Registro_Backend.php">
-        Nombre de usuario: <input type="text" name="NameR"><br>
-        Nombre y apellido: <input type="text" name="NameApe"><br>
-        Cedula: <input type="text" name="Ced"><br>
-        Correo: <input type="email"  name="Correo"><br>
-        Password: <input type="password" name="passR"><br>
+        Nombre de usuario: <input type="text" name="NameR" required><br>
+        Nombre y apellido: <input type="text" name="NameApe" required><br>
+        Cedula: <input type="text" name="Ced"required><br>
+        Correo: <input type="email"  name="Correo" required><br>
+        Password: <input type="password" name="passR" required><br>
 
         <!--Telefono: <input type="text" name="TelP"><br>-->
         <input type="submit" name="boton0" value="Enviar"><br><br>
