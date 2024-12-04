@@ -28,6 +28,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
     
     if ($evento) {
         //detalles del evento
+        $image = $event->imprimir_image($id);
+        $image_base64 = base64_encode($image['imagen']);
+        echo "<img src='data:image/jpeg;base64,{$image_base64}' alt='Imagen' width='200' height='150'>".'<br>';
         echo '<h1>' . $evento['tittle_event'] . '</h1>';
         echo '<p>' . $evento['direccion'] . '</p>';
         echo '<p>Fecha inicio: ' . $evento['fecha_start'] . '</p>';

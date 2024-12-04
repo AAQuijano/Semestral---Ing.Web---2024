@@ -15,7 +15,7 @@ if(!isset($_SESSION['user'])){
     <title>Administrador</title>
 </head>
 <body>
-<a href="../Home.php" target="_blank">Home</a>
+<a href="../Home.php">Home</a>
     
 </body>
 </html>
