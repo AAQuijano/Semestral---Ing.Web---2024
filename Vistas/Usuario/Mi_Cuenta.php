@@ -25,16 +25,18 @@ $user = $metodos->Buscar_user($_SESSION['user']);
     <link rel="stylesheet" href="micuenta.css">
 </head>
 <body>
-    <h3>Info de usuario</h3>
+    <h3>Perfil de usuario</h3>
     <?php 
         echo '<p>Nombre: ' . $user['name_last'] . '</p>';
         echo '<p>Cedula: ' . $user['ced_user'] . '</p>';
         echo '<p>Email: ' . $user['email_user'] . '</p>';
     ?>
+    <div class="container">
+        <a href="../Home.php">Home</a>
+        <a href="Mis_Tickets.php">Mis Bolestos</a><br>
+        <br><a href="Editar_user.php">Editar usuario</a><br>
+    </div>
     
-    <br><a href="Editar_user.php">Editar usuario</a><br>
-    <a href="Mis_Tickets.php">Mis Bolestos</a><br>
-    <a href="../Home.php">Home</a>
     
 
     
