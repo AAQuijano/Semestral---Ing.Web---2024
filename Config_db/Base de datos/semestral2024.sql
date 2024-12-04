@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2024 a las 00:44:55
+-- Tiempo de generación: 04-12-2024 a las 04:59:22
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -68,7 +68,9 @@ CREATE TABLE `factura_event` (
 --
 
 INSERT INTO `factura_event` (`id_factura`, `id_user`, `id_event`, `id_ticket`, `qty_ticket`, `Total_pago`) VALUES
-(2, 2, 4, 2, '1', '12');
+(2, 2, 4, 2, '1', '12'),
+(3, 2, 5, 3, '2', '10'),
+(4, 2, 5, 4, '2', '6');
 
 -- --------------------------------------------------------
 
@@ -131,8 +133,8 @@ CREATE TABLE `ticket_event` (
 
 INSERT INTO `ticket_event` (`id_ticket`, `tipo_ticket`, `id_event`, `qty_ticket`, `precio`) VALUES
 (2, 'vip', 4, '12', '12'),
-(3, 'vip', 5, '20', '5'),
-(4, 'normal', 5, '40', '3');
+(3, 'vip', 5, '18', '5'),
+(4, 'normal', 5, '38', '3');
 
 -- --------------------------------------------------------
 
@@ -218,7 +220,7 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `factura_event`
 --
 ALTER TABLE `factura_event`
-  MODIFY `id_factura` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_factura` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `image_event`
