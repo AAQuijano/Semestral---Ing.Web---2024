@@ -22,6 +22,7 @@ $user = $metodos->Buscar_user($_SESSION['user']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuario</title>
+    <link rel="stylesheet" href="micuenta.css">
 </head>
 <body>
     <h3>Info de usuario</h3>

@@ -32,7 +32,7 @@ if(isset($_POST['NameR']) && !empty($_POST['NameR']) && isset($_POST['passR']) &
             echo 'Usuario correctamente creado' . '<br>';
             $usuarios = $registro->Ver_users();
             //print_r($usuarios);
-            header('Location: ../Index.php');
+            header('Location: ../Login/Login_Frontend.php');
 
         }else{
             echo '<br>'.'<br>'.'Error al insertar usuario'.'<br>';

@@ -13,6 +13,7 @@ if(!isset($_SESSION['user'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Evento</title>
+    <link rel="stylesheet" href="ver_evento.css">
 </head>
 <body>
     <h3>Crear evento</h3>

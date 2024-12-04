@@ -23,6 +23,7 @@ $event = new Eventos_db($db);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Bolestos info</title>
+    <link rel="stylesheet" href="tickets.css">
 </head>
 <body>
     <h4>Tickets comprados info</h4>
