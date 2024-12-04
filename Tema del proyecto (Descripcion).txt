@@ -1,3 +1,7 @@
 #Descripcion de tema del proyecto
 
--
+-Esta página web es una plataforma diseñada para facilitar la organización, promoción y asistencia a eventos sociales y corporativos. Su objetivo principal es ofrecer un espacio donde los usuarios puedan explorar eventos disponibles, adquirir boletos y participar en actividades de su interés, mientras los organizadores cuentan con herramientas para gestionar sus eventos, administrar las inscripciones y monitorear la participación. 
+
+La plataforma combina funcionalidad y accesibilidad, brindando una experiencia intuitiva tanto para asistentes como para organizadores. Los usuarios pueden navegar fácilmente por la lista de eventos, filtrar según categorías y realizar compras de manera segura, mientras los organizadores tienen acceso a paneles de control que simplifican la gestión de información y la promoción de eventos. 
+
+EventLink destaca por su enfoque en la eficiencia y la simplicidad, adaptándose a las necesidades específicas de sus diferentes tipos de usuarios y asegurando una experiencia fluida y práctica en cada interacción.
