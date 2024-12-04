@@ -100,14 +100,17 @@ if(isset($_POST['titu']) && !empty($_POST['titu']) && isset($_POST['dire']) && !
         print_r($e->errorInfo);
     }
 
-    echo "Paso";
+    //echo "Paso";
 
     
 
    
 
 }else{
-    echo "Error de insercion";
+    //echo "Error de insercion";
+    echo"<script> alert('Error de insercion');document.location.href = 'CrearEvento_Frontend.php';</script>";
+
+ 
 }
 
 

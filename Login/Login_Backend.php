@@ -35,4 +35,6 @@ if(isset($_POST['NameL']) && !empty($_POST['NameL']) && isset($_POST['passL']) &
         echo "Detalles adicionales:"."<br>";
         print_r($e->errorInfo);
     }    
+}else{
+    echo"<script> alert('Error de insercion');document.location.href = 'Login_Frontend.php';</script>";
 }

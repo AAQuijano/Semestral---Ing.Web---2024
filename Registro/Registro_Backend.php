@@ -46,6 +46,7 @@ if(isset($_POST['NameR']) && !empty($_POST['NameR']) && isset($_POST['passR']) &
         print_r($e->errorInfo);
     }
 }else{
-    echo "Error de datos insertados"."<br>";
-    echo "<a href='Registro_FE.html'>Regresar</a>";
+    //echo "Error de datos insertados"."<br>";
+    //cho "<a href='Registro_FE.html'>Regresar</a>";
+    echo"<script> alert('Error de insercion');document.location.href = 'Registro_Frontend.php';</script>";
 }
