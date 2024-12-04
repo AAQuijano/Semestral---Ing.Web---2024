@@ -18,54 +18,54 @@ $filas = count($eventos);
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Home Usuario</title>
 </head>
 <body>
     <h3>Bienvenido <?php echo $user;  ?></h3><br>
 
-    <h4>Menu</h4>
-    <a href="Usuario/Mi_Cuenta.php">Mi Cuenta</a><br>
-    <a href="Evento/CrearEvento_Frontend.php">Crear Evento</a><br>
-    <a href="Cerrar_session.php">Cerrar Sesion</a><br>
-
+    <nav>
+        <div>
+            <img src="logo.png" alt="">
+        </div>
+        <div class='nav-links'>
+            <a href="Usuario/Mi_Cuenta.php"><i class="ri-user-3-line"></i> Mi Cuenta</a><br>
+            <a href="Evento/CrearEvento_Frontend.php"><i class="ri-add-line"></i> Crear Evento</a><br>
+            <a href="Cerrar_session.php"><i class="ri-door-open-line"></i> Cerrar Sesion</a><br>
+        </div>
+    </nav>
+    
     <h4>Eventos</h4>
 
-    <table>
-        <tr>  
-            <?php for($x=0;$x<$filas;$x++){ $id=$eventos[$x]['id_event'];?>
-                <td>
-                    <a href="Evento/ver_evento.php?id=<?php echo $id ?>">
-                        <?php 
-                            $image = $event->imprimir_image($id);
-                            $image_base64 = base64_encode($image['imagen']);
-                            echo "<img src='data:image/jpeg;base64,{$image_base64}' alt='Imagen' width='200' height='150'>".'<br>';
-                             //echo $image['imagen'];
-                            echo($eventos[$x]['tittle_event']).'<br>';
-                            echo($eventos[$x]['direccion']).'<br>';
-                            echo($eventos[$x]['fecha_start']).'<br>';
-                            echo($eventos[$x]['fecha_end']).'<br>';
-                            echo($eventos[$x]['hora_start']).'<br>';
-                            echo($eventos[$x]['hora_end']).'<br>';
-                        ?>                   
-                    </a>                    
-                </td> 
-            <?php }?>     
-        </tr>
-        
-    </table>
+    <!-- Contenedor principal de los eventos -->
+    <div class="eventos-container">
+        <?php for($x=0;$x<$filas;$x++){ $id=$eventos[$x]['id_event']; ?>
+            <div class="evento-card">
+                <a class="carta-evento" href="Evento/ver_evento.php?id=<?php echo $id ?>">
+                    <?php 
+                        $image = $event->imprimir_image($id);
+                        $image_base64 = base64_encode($image['imagen']);
+                        echo "<img src='data:image/jpeg;base64,{$image_base64}' alt='Imagen'>"; 
+                    ?>
+                    <p>Nombre del Evento: </p><?php echo $eventos[$x]['tittle_event']; ?><br>
+                    <p>Dirección del Evento: </p><?php echo $eventos[$x]['direccion']; ?><br>
+                    <p>Inicio del Evento: </p><?php echo $eventos[$x]['fecha_start']; ?><br>
+                    <p>Culminación del Evento: </p><?php echo $eventos[$x]['fecha_end']; ?><br>
+                    <p>Hora de Inicio: </p><?php echo $eventos[$x]['hora_start']; ?><br>
+                    <p>Hora de Culminación: </p><?php echo $eventos[$x]['hora_end']; ?><br>
+                </a>
+            </div> 
+        <?php } ?>     
+    </div>
 
-   
-
-
-
-    
-    
-    
+    <footer>
+        <p>Mi Evento - Derechos Reservados © 2024</p>
+    </footer>
 </body>
 </html>

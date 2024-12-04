@@ -1,0 +1,128 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+
+h4 {
+    color: #2c3e50;
+    margin-left: 20px;
+}
+
+/* Navigation links */
+a {
+    display: inline-block;
+    margin: 10px 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1d6fa5;
+}
+
+/* Estilo general del contenedor de eventos */
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap;  /* Los elementos se mueven a una nueva línea cuando no hay espacio */
+    justify-content: space-evenly;  /* Distribuye los elementos con espacio entre ellos */
+    gap: 20px;  /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo de cada tarjeta de evento */
+.evento-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;  /* Puedes ajustar este valor según el tamaño que desees para las tarjetas */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Estilo de las imágenes dentro de las tarjetas */
+.evento-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilo de los textos dentro de las tarjetas */
+.evento-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilo para los enlaces */
+a.carta-evento {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .evento-card {
+        width: 100%;  /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
+    }
+}
+
+
+/* Navegación */
+nav {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #0077b6;
+}
+
+nav img{
+    width: 120px;
+    padding: 5px;
+    padding-left: 30px;
+    border-radius: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    border: 2px solid #0077b6;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #0077b6;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
