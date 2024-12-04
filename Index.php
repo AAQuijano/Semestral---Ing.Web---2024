@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiEventos - Home</title>
+    <title>EventLink - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
     <div class="container">
         <div class="logo">
-            <img src="logo.png" alt="MiEventos Logo" class="logo-img">
+            <img src="logo.png" alt="EventLink" class="logo-img">
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search for Event">
@@ -43,7 +43,7 @@
                     <!-- Tarjeta de evento 1 -->
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="image1.jpg" alt="Festival Madretambor">
+                            <img src="imagenes/evento1.jpg" alt="Festival Madretambor">
                         </div>
                         <div class="event-content">
                             <h4>Festival Madretambor</h4>
@@ -59,7 +59,7 @@
                     <!-- Tarjeta de evento 2 -->
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="image2.jpg" alt="Kalunga Cowboy Edition">
+                            <img src="imagenes/evento2.jpeg" alt="Kalunga Cowboy Edition">
                         </div>
                         <div class="event-content">
                             <h4>Kalunga Cowboy Edition</h4>
@@ -75,7 +75,7 @@
                     <!-- Tarjeta de evento 3 -->
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="image3.jpg" alt="MOLA Rodríguez Jr & Francis de Simone">
+                            <img src="imagenes/evento3.jpeg" alt="MOLA Rodríguez Jr & Francis de Simone">
                         </div>
                         <div class="event-content">
                             <h4>MOLA Rodríguez Jr & Francis de Simone</h4>
