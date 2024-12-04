@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>MiEventos</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Crear Evento</a></li>
-                    <li><a href="#">Registrarse</a></li>
-                    <li><a href="#">Iniciar Sesión</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                </ul>
-            </nav>
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="MiEventos Logo" class="logo-img">
         </div>
-    </header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for Event">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">English</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#" class="btn-create">Create Event</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section class="hero">
@@ -88,6 +91,13 @@
             </div>
         </section>
     </main>
+
+    <div id="cookie-banner" class="cookie-banner">
+    <p>Este sitio utiliza cookies para mejorar la experiencia del usuario. <a href="#">Saber más</a>.</p>
+    <button id="accept-cookie" class="btn-primary">Aceptar</button>
+</div>
+
+<script src="cookie.js"></script>
 
     <footer>
         <div class="container">

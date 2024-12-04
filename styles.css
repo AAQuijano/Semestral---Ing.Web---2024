@@ -11,39 +11,81 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-
 /* Header */
 header {
-    background: #ff6f61;
-    color: white;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background:#ff6f61;
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
-header nav ul {
+.logo-img {
+    height: 40px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+    font-style: italic;
+    color: #666;
+}
+
+nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
-header nav ul li a {
-    color: white;
+nav ul li a {
     text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    color: #333;
     font-weight: bold;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
-header nav ul li a:hover {
-    color: #ffd1c1;
+nav ul li a:hover {
+    color: #007BFF;
 }
+
+nav ul li .btn-create {
+    background: #007BFF;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+nav ul li .btn-create:hover {
+    background: #0056b3;
+}
+
 
 /* Hero Section */
 .hero {
@@ -143,3 +185,44 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
+
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    font-size: 14px;
+    display: none; /* Oculto por defecto */
+}
+
+.cookie-banner p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.cookie-banner a {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.cookie-banner .btn-primary {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cookie-banner .btn-primary:hover {
+    background-color: #0056b3;
+}
+
