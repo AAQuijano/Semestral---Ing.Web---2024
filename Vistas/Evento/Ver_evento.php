@@ -28,6 +28,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
     
     if ($evento) {
         //detalles del evento
+        $image = $event->imprimir_image($id);
+        $image_base64 = base64_encode($image['imagen']);
+        echo "<img src='data:image/jpeg;base64,{$image_base64}' alt='Imagen' width='200' height='150'>".'<br>';
         echo '<h1>' . $evento['tittle_event'] . '</h1>';
         echo '<p>' . $evento['direccion'] . '</p>';
         echo '<p>Fecha inicio: ' . $evento['fecha_start'] . '</p>';
@@ -76,7 +79,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])) {
 if(isset($_POST['boton0'])){
     if(isset($_POST['qty0']) && !empty($_POST['qty0'])){
         $qty = $_POST['qty0'];
-        $qty_dis = $tickets[0]['id_ticket'];
+        $qty_dis = $tickets[0]['qty_ticket'];
         $res = $qty_dis - $qty;
         $price = $qty * $tickets[0]['precio'];
         if($res < 0){
@@ -84,7 +87,13 @@ if(isset($_POST['boton0'])){
         }else {
             $id_user = $metodos->Buscar_user($_SESSION['user']);
             if($event->Comprar_ticket($id_user['id_user'], $tickets[0]['id_event'], $tickets[0]['id_ticket'],$qty, $price)){
-                echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                if($event->update_tickets($tickets[0]['id_ticket'], $res)){
+                    echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                }else{
+                    echo"<script> alert('Error de actualizacion de tickets');document.location.href = 'Ver_evento.php';</script>";
+
+                }
+                
 
             }else{
                  echo"<script> alert('Error de comprar');document.location.href = 'Ver_evento.php';</script>";
@@ -94,7 +103,7 @@ if(isset($_POST['boton0'])){
     }
     if(isset($_POST['qty1']) && !empty($_POST['qty1'])){
         $qty = $_POST['qty1'];
-        $qty_dis = $tickets[1]['id_ticket'];
+        $qty_dis = $tickets[1]['qty_ticket'];
         $res = $qty_dis - $qty;
         $price = $qty * $tickets[1]['precio'];
         if($res < 0){
@@ -102,7 +111,12 @@ if(isset($_POST['boton0'])){
         }else {
             $id_user = $metodos->Buscar_user($_SESSION['user']);
             if($event->Comprar_ticket($id_user['id_user'], $tickets[1]['id_event'], $tickets[1]['id_ticket'],$qty, $price)){
-                echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                if($event->update_tickets($tickets[1]['id_ticket'], $res)){
+                    echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                }else{
+                    echo"<script> alert('Error de actualizacion de tickets');document.location.href = 'Ver_evento.php';</script>";
+
+                }
 
             }else{
                 echo"<script> alert('Error de comprar');document.location.href = 'Ver_evento.php';</script>";
@@ -111,7 +125,7 @@ if(isset($_POST['boton0'])){
     }
     if(isset($_POST['qty2']) && !empty($_POST['qty2'])){
         $qty = $_POST['qty2'];
-        $qty_dis = $tickets[2]['id_ticket'];
+        $qty_dis = $tickets[2]['qty_ticket'];
         $res = $qty_dis - $qty;
         $price = $qty * $tickets[2]['precio'];
         if($res < 0){
@@ -119,7 +133,12 @@ if(isset($_POST['boton0'])){
         }else {
             $id_user = $metodos->Buscar_user($_SESSION['user']);
             if($event->Comprar_ticket($id_user['id_user'], $tickets[2]['id_event'], $tickets[2]['id_ticket'],$qty, $price)){
-                echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                if($event->update_tickets($tickets[2]['id_ticket'], $res)){
+                    echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                }else{
+                    echo"<script> alert('Error de actualizacion de tickets');document.location.href = 'Ver_evento.php';</script>";
+
+                }
 
             }else{
                 echo"<script> alert('Error de comprar');document.location.href = 'Ver_evento.php';</script>";
@@ -129,7 +148,7 @@ if(isset($_POST['boton0'])){
     }
     if(isset($_POST['qty3']) && !empty($_POST['qty3'])){
         $qty = $_POST['qty3'];
-        $qty_dis = $tickets[3]['id_ticket'];
+        $qty_dis = $tickets[3]['qty_ticket'];
         $res = $qty_dis - $qty;
         $price = $qty * $tickets[3]['precio'];
         if($res < 0){
@@ -137,7 +156,12 @@ if(isset($_POST['boton0'])){
         }else {
             $id_user = $metodos->Buscar_user($_SESSION['user']);
             if($event->Comprar_ticket($id_user['id_user'], $tickets[3]['id_event'], $tickets[3]['id_ticket'],$qty, $price)){
-                echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                if($event->update_tickets($tickets[3]['id_ticket'], $res)){
+                    echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                }else{
+                    echo"<script> alert('Error de actualizacion de tickets');document.location.href = 'Ver_evento.php';</script>";
+
+                }
 
             }else{
                 echo"<script> alert('Error de comprar');document.location.href = 'Ver_evento.php';</script>";
@@ -147,18 +171,23 @@ if(isset($_POST['boton0'])){
     }
     if(isset($_POST['qty4']) && !empty($_POST['qty4'])){
         $qty = $_POST['qty4'];
-        $qty_dis = $tickets[4]['id_ticket'];
+        $qty_dis = $tickets[4]['qty_ticket'];
         $res = $qty_dis - $qty;
         $price = $qty * $tickets[4]['precio'];
         if($res < 0){
-            echo "Tickets no disponibles";
+            echo"<script> alert('Tickets no disponibles');document.location.href = '../Home.php';</script>";
         }else {
             $id_user = $metodos->Buscar_user($_SESSION['user']);
             if($event->Comprar_ticket($id_user['id_user'], $tickets[4]['id_event'], $tickets[4]['id_ticket'],$qty, $price)){
-                echo 'Insercion correcta';
+                if($event->update_tickets($tickets[4]['id_ticket'], $res)){
+                    echo"<script> alert('Compra realizada');document.location.href = '../Home.php';</script>";
+                }else{
+                    echo"<script> alert('Error de actualizacion de tickets');document.location.href = 'Ver_evento.php';</script>";
+
+                }
 
             }else{
-                echo 'error';
+                echo"<script> alert('Error de comprar');document.location.href = 'Ver_evento.php';</script>";
             }
         }
         

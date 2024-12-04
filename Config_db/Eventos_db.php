@@ -223,6 +223,77 @@ class Eventos_db{
 
     }
 
+    public function update_tickets($id_ticket, $valor){
+        try{
+            $query = "UPDATE " . $this->table_tickets . " SET qty_ticket = :dato WHERE id_ticket = :id";
+            $stmt = $this->db_conn->prepare($query);
+            $stmt->bindParam(":id", $id_ticket);
+            $stmt->bindParam(":dato", $valor);
+            return $stmt->execute();
+        }catch(PDOException $e){
+            echo "Error de sentencia: " . $e->getMessage()."<br>";
+            echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
+            echo "Detalles adicionales:"."<br>";
+            print_r($e->errorInfo);
+            return false;
+        }
+
+    }
+
+    public function ver_factura($id_user){
+        try{
+            $query = "SELECT * FROM " . $this->table_factura ." WHERE id_user = :id";
+            $stmt = $this->db_conn->prepare($query);
+            $stmt->bindParam(":id", $id_user);
+            $stmt->execute();
+            $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;   
+        }catch(PDOException $e){
+            echo "Error de sentencia: " . $e->getMessage()."<br>";
+            echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
+            echo "Detalles adicionales:"."<br>";
+            print_r($e->errorInfo);
+            return false;
+        }
+
+    }
+
+    public function ver_evento($id_event){
+        try{
+            $query = "SELECT tittle_event FROM " . $this->table_eventos ." WHERE id_event = :id";
+            $stmt = $this->db_conn->prepare($query);
+            $stmt->bindParam(":id", $id_event);
+            $stmt->execute();
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $resultado;   
+        }catch(PDOException $e){
+            echo "Error de sentencia: " . $e->getMessage()."<br>";
+            echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
+            echo "Detalles adicionales:"."<br>";
+            print_r($e->errorInfo);
+            return false;
+        }
+
+    }
+
+    public function ver_ticket($id_ticket){
+        try{
+            $query = "SELECT tipo_ticket FROM " . $this->table_tickets ." WHERE id_ticket = :id";
+            $stmt = $this->db_conn->prepare($query);
+            $stmt->bindParam(":id", $id_ticket);
+            $stmt->execute();
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $resultado;   
+        }catch(PDOException $e){
+            echo "Error de sentencia: " . $e->getMessage()."<br>";
+            echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
+            echo "Detalles adicionales:"."<br>";
+            print_r($e->errorInfo);
+            return false;
+        }
+
+    }
+
     public function cambiar_tickets(){
 
     }
