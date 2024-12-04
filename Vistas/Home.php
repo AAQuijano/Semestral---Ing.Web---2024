@@ -37,7 +37,7 @@ $filas = count($eventos);
         <div class='nav-links'>
             <a href="Usuario/Mi_Cuenta.php"><i class="ri-user-3-line"></i> Mi Cuenta</a><br>
             <a href="Evento/CrearEvento_Frontend.php"><i class="ri-add-line"></i> Crear Evento</a><br>
-            <!--Enlace a api--><!--<a href="../Api/ApiAdmin.php">View Admin | DB</a><br>--> 
+            <!--Enlace a api--><a href="../Api/ApiAdmin.php">View Admin | DB</a><br> 
             <a href="Cerrar_session.php"><i class="ri-door-open-line"></i> Cerrar Sesion</a><br>
         </div>
     </nav>

@@ -12,7 +12,7 @@ if(!isset($_SESSION['user'])){
     echo"<script> alert('Debes iniciar sesión');document.location.href = '../Login/Login_Frontend.php';</script>";
     exit(); 
 }
-$user = $metdos->Buscar_user($_SESSION['user']);
+$user = $metodos->Buscar_user($_SESSION['user']);
 if($user['id_rol'] == 1){
     echo"<script> alert('Tu nivel de usuario no es suficiente para ingresar a esta pestaña');document.location.href = '../Vistas/Home.php';</script>"; 
 }
