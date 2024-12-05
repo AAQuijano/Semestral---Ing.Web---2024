@@ -18,7 +18,11 @@ class connection_db{
             //echo "Versión del servidor MySQL: " . $serverVersion . "<br>";
             return $this->conn;
         }catch(PDOException $e){
-            print "Error de conexión: " . $e->getMessage();
+            //print "Error de conexión: " . $e->getMessage();
+            echo "Error de sentencia: " . $e->getMessage()."<br>";
+            echo "Código de error SQLSTATE: " . $e->getCode()."<br>";
+            echo "Detalles adicionales:"."<br>";
+            print_r($e->errorInfo);
         }
     }
 }
